@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application Lists To Do</string>
+
+    <!--TODOAPP-->
+    <string name="TDAWelcome">Welcome</string>
+    <string name="TDACategory">Category</string>
+</resources>
