@@ -28,4 +28,11 @@
         android:textColor="@color/subtitle_text"
         />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
 </LinearLayout>
