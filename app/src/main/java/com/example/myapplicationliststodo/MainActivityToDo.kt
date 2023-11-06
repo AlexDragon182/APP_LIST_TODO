@@ -9,6 +9,8 @@ class MainActivityToDo : AppCompatActivity() {
 
     private lateinit var rvCategories : RecyclerView
     private lateinit var categoriesAdapter:CategoriesAdapter
+    private lateinit var rvTask:RecyclerView
+
     private val categories = listOf(
         TaskCategory.Other,
         TaskCategory.Business,
@@ -26,5 +28,6 @@ class MainActivityToDo : AppCompatActivity() {
     }
     private fun initComponent (){
         rvCategories = findViewById(R.id.rvCategories)
+        rvTask = findViewById(R.id.rvTask)
     }
 }

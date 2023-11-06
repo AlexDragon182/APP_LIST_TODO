@@ -23,15 +23,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/TDACategory"
-        android:textAllCaps="true"
-        android:layout_marginHorizontal="32dp"
-        android:textColor="@color/subtitle_text"
+        style="@style/TODOSubtitle"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TDAC_task"
+        style="@style/TODOSubtitle"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
 
 
 
