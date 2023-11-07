@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CategoriesViewHolder (view:View): RecyclerView.ViewHolder(view) {
 
-    private val tvCategoryName:TextView = view.findViewById(R.id.rvCategories)
+    private val tvCategoryName:TextView = view.findViewById(R.id.tvCategoryName)
     private val divided:View = view.findViewById(R.id.divider)
 
     fun render(taskCategory: TaskCategory){
