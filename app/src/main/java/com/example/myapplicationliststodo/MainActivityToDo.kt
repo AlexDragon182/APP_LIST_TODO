@@ -42,21 +42,30 @@ class MainActivityToDo : AppCompatActivity() {
     }
 
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories){position -> updateCategories(position)}
         rvCategories.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
 
-        taskAdapter = TaskAdapter(tasks) {onItemSelected(it)}
+        taskAdapter = TaskAdapter(tasks) {position ->onItemSelected(position)}
         rvTask.layoutManager = LinearLayoutManager(this)
         rvTask.adapter = taskAdapter
     }
     private fun onItemSelected(position:Int){
-        tasks[position].isSelected = tasks[position].isSelected
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTask()
+    }
+
+    private fun updateCategories(position:Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
         updateTask()
     }
 
     private fun updateTask() {
+        val selectedCategories : List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter{selectedCategories.contains(it.category)}
+        taskAdapter.tasks = newTasks
         taskAdapter.notifyDataSetChanged()
     }
 
